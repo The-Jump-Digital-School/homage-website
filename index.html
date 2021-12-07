@@ -5,11 +5,184 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>FromSoftware</title>
+	<title>FromSoftware | フロム・ソフトウェア</title>
+
+	<link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+	<header>
+		<h1>FromSoftware</h1>
+		<nav>
+			<a href="#">
+				Company
+			</a>
+			<a href="#">
+				Products
+			</a>
+			<a href="#">
+				News
+			</a>
+			<a href="#">
+				Press Release
+			</a>
+			<a href="#">
+				Recruit
+			</a>
+			<a href="#">
+				Support
+			</a>
+		</nav>
+	</header>
+	<main>
+		<ul class="gallery">
+			<li class="placeholder">
+				<label>
+					<article></article>
+				</label>
+			</li>
+			<li class="darksouls">
+				<label for="darksouls-details">
+					<article>
+						<h1>Dark Souls: Remastered</h1>
+					</article>
+				</label>
+			</li>
+			<li class="acvd">
+				<label for="acvd-details">
+					<article>
+						<h1>Armored Core: Verdict Day</h1>
+					</article>
+				</label>
+			</li>
+			<li class="eldenring">
+				<label for="eldenring-details">
+					<article>
+						<h1>Elden Ring</h1>
+					</article>
+				</label>
+			</li>
+			<li class="sekiro">
+				<label for="sekiro-details">
+					<article>
+						<h1>Sekiro</h1>
+					</article>
+				</label>
+			</li>
+			<li class="bloodborne">
+				<label for="bloodborne-details">
+					<article>
+						<h1>Bloodborne</h1>
+					</article>
+				</label>
+			</li>
+			<li class="deracine">
+				<label for="deracine-details">
+					<article>
+						<h1>Deracine</h1>
+					</article>
+				</label>
+			</li>
+			<li class="placeholder">
+				<label>
+					<article></article>
+				</label>
+			</li>
+		</ul>
+	</main>
+	<aside>
+		<!-- This stuff should move back to the list... yeah! -->
+		<input id="darksouls-details" type="checkbox" hidden />
+		<article>
+			<h1>Dark Souls Series</h1>
+			<p>
+				DARK SOULSシリーズは、ダンジョン探索の緊張感、
+				敵と遭遇した時の恐怖、RPGが本来持っている根本的な面白さと、
+				高い達成感につながるゲームデザインを徹底して追及した
+				RPGシリーズです。
+			</p>
+			<a href="https://www.darksouls.jp/" target="_blank" rel="noreferrer">Official Site</a>
+			<label class="close-btn" for="darksouls-details">close</label>
+		</article>
 
+		<input id="acvd-details" type="checkbox" hidden />
+		<article>
+			<h1>ARMORED CORE SERIES</h1>
+			<p>
+				頭、コア、腕、脚、武器など、
+				数百種類以上のパーツを自在に組み合わせて、
+				自分だけのオリジナルメカで戦う
+				メカカスタマイズアクションゲームシリーズです。
+			</p>
+			<a href="https://www.armoredcore.net/top/pc/" target="_blank" rel="noreferrer">Official Site</a>
+			<label class="close-btn" for="acvd-details">close</label>
+		</article>
+
+		<input id="eldenring-details" type="checkbox" hidden />
+		<article>
+			<div class="">
+				<h1>ELDEN RING</h1>
+				<p>
+					発売日：<br /><br />
+					2022年2月25日<br />
+					ジャンル：<br /><br />
+					アクションRPG<br /><br />
+					プレイヤー：
+				</p>
+				<a href="https://www.fromsoftware.jp/jp/eldenring/" target="_blank" rel="noreferrer">Official Site</a>
+			</div>
+			<label class="close-btn" for="eldenring-details">close</label>
+		</article>
+
+		<input id="sekiro-details" type="checkbox" hidden />
+		<article>
+			<h1>SEKIRO: SHADOWS DIE TWICE</h1>
+			<p>
+				DARK SOULSシリーズは、ダンジョン探索の緊張感、
+				敵と遭遇した時の恐怖、RPGが本来持っている根本的な面白さと、
+				高い達成感につながるゲームデザインを徹底して追及した
+				RPGシリーズです。
+			</p>
+			<a href="https://www.sekiro.jp/" target="_blank" rel="noreferrer">Official Site</a>
+			<label class="close-btn" for="sekiro-details">close</label>
+		</article>
+
+		<input id="bloodborne-details" type="checkbox" hidden />
+		<article>
+			<h1>Bloodborne</h1>
+			<p>
+				頭、コア、腕、脚、武器など、
+				数百種類以上のパーツを自在に組み合わせて、
+				自分だけのオリジナルメカで戦う
+				メカカスタマイズアクションゲームシリーズです。
+			</p>
+			<a href="https://www.jp.playstation.com/scej/title/bloodborne/" target="_blank" rel="noreferrer">Official
+				Site</a>
+			<label class="close-btn" for="bloodborne-details">close</label>
+		</article>
+
+		<input id="deracine-details" type="checkbox" hidden />
+		<article>
+			<div class="">
+				<h1>Déraciné</h1>
+				<p>
+					発売日：<br /><br />
+					2022年2月25日<br />
+					ジャンル：<br /><br />
+					アクションRPG<br /><br />
+					プレイヤー：
+				</p>
+				<a href="https://www.jp.playstation.com/games/deracine/" target="_blank" rel="noreferrer">
+					Official
+					Site
+				</a>
+			</div>
+			<label class="close-btn" for="deracine-details">close</label>
+		</article>
+	</aside>
+	<footer>
+
+	</footer>
 </body>
 
 </html>

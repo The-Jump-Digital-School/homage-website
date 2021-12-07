@@ -1,0 +1,287 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  color: white;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", "Arial", "Trebuchet", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 2px 0 0.5em;
+}
+
+header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 48px 60px 48px 96px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav a {
+  display: block;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.25em;
+  transition: opacity 250ms ease-in-out 0s;
+  margin-right: 36px;
+  margin-bottom: 20px;
+}
+
+nav:hover a {
+  opacity: 0.5;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+
+  height: 100vh;
+  overflow: hidden;
+}
+
+body > header h1 {
+  flex-shrink: 0;
+  background-image: url("assets/corp.svg");
+  background-repeat: no-repeat;
+  padding-top: 24px;
+  height: 0;
+  overflow: hidden;
+  margin-right: 96px;
+}
+
+main {
+  display: flex; /* use default values to flex the child to fit the same dimensions */
+  margin: 0;
+  min-height: calc(100vh - 96px * 2 - 140px * 2);
+}
+
+ul.gallery {
+  display: flex;
+  /* display: grid;
+  grid-template-columns: repeat(6, 1fr); */
+  position: relative;
+  left: calc(100vw / -6);
+  width: calc(100vw + 100vw / 3); /* must be forced */
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+ul.gallery li {
+  display: flex;
+  /* flex-shrink: 0; */
+  position: relative;
+  width: calc(100vw / 6);
+  min-width: 100px;
+
+  box-shadow: 0 0 60px black;
+  filter: grayscale(0.5) opacity(0.5);
+
+  overflow: hidden;
+  transition: width 1100ms ease-out 50ms, min-width 1100ms ease-out 50ms,
+    filter 250ms ease-out 0s;
+  transform: skew(-20deg);
+}
+
+ul.gallery:hover li {
+  /* width: calc(100vw / 8); */
+  filter: grayscale(1) opacity(0.36);
+}
+
+ul.gallery li:hover {
+  width: calc(100vw / 3);
+  min-width: 260px;
+  filter: grayscale(0) opacity(1);
+}
+
+ul.gallery li article {
+  position: absolute;
+  right: -180%;
+  width: 100vw;
+  height: 100%;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  transition: right 1s ease-in-out 150ms;
+  transform: skew(20deg);
+}
+
+ul.gallery li:hover article {
+  right: -118%;
+}
+
+ul.gallery li article h1 {
+  position: relative;
+  left: -25%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  opacity: 0;
+  background-size: contain;
+
+  padding-top: 300px;
+  width: 400px;
+  height: 0;
+
+  filter: drop-shadow(0 0 30px black) drop-shadow(0 0 20px black)
+    drop-shadow(0 0 20px black);
+
+  overflow: hidden;
+  transition: opacity 750ms ease 350ms, left 1s ease 150ms;
+}
+
+ul.gallery li:hover article h1 {
+  left: 1.25%;
+  opacity: 1;
+}
+
+.placeholder {
+  filter: grayscale(0.88) opacity(0.36) !important;
+}
+
+.placeholder article {
+  cursor: default !important;
+}
+
+.placeholder:hover {
+  filter: grayscale(0.44) opacity(0.44);
+}
+
+.placeholder:first-child {
+  background-image: url("assets/ds3-player.jpg");
+}
+
+.placeholder:last-child {
+  background-image: url("assets/acvd-bot.jpg");
+}
+
+.darksouls {
+  z-index: 7;
+}
+
+.darksouls article {
+  background-image: url("assets/darksouls-colour.jpg");
+}
+
+.darksouls article > h1 {
+  background-image: url("assets/darksouls-logo.png");
+}
+
+.acvd {
+  z-index: 6;
+}
+
+.acvd article {
+  background-image: url("assets/acvd-colour.jpg");
+}
+
+.acvd article > h1 {
+  background-image: url("assets/acvd-logo.png");
+}
+
+.eldenring {
+  z-index: 5;
+}
+
+.eldenring article {
+  background-image: url("assets/eldenring-colour.jpg");
+}
+
+.eldenring article > h1 {
+  background-image: url("assets/eldenring-logo.png");
+}
+
+.sekiro {
+  z-index: 4;
+}
+
+.sekiro article {
+  background-image: url("assets/sekiro-colour.jpg");
+}
+
+.sekiro article > h1 {
+  background-image: url("assets/sekiro-logo.png");
+}
+
+.bloodborne {
+  z-index: 5;
+}
+
+.bloodborne article {
+  background-image: url("assets/bloodbourne-colour.jpg");
+}
+
+.bloodborne article > h1 {
+  background-image: url("assets/bloodborne-logo.png");
+  margin-left: -16px;
+}
+
+.deracine {
+  z-index: 6;
+}
+
+.deracine article {
+  background-image: url("assets/deracine-colour.jpg");
+}
+
+.deracine article > h1 {
+  background-image: url("assets/deracine-logo.png");
+  margin-left: -26px;
+}
+
+aside article {
+  position: absolute;
+  background: black;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  opacity: 0;
+
+  padding-top: 180px;
+
+  transition: opacity 500ms ease 0s, left 0s linear 500ms;
+}
+
+input[type="checkbox"]:checked + article {
+  left: 0;
+  transition: opacity 500ms ease 0s;
+  opacity: 1;
+}
