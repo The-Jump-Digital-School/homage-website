@@ -1,3 +1,4 @@
+/* Ubiquitous Border Box */
 html {
   box-sizing: border-box;
 }
@@ -7,12 +8,21 @@ html {
 *::after {
   box-sizing: inherit;
 }
+/**/
 
+/* Generics */
 body {
-  color: white;
-  background-color: black;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+
   margin: 0;
   padding: 0;
+  height: 100vh;
+  overflow: hidden;
+
+  color: white;
+  background-color: black;
   font-family: "Helvetica Neue", "Arial", "Trebuchet", sans-serif;
 }
 
@@ -25,7 +35,7 @@ h6 {
   margin: 2px 0 0.5em;
 }
 
-header {
+body > header {
   position: relative;
   z-index: 10;
   display: flex;
@@ -34,20 +44,28 @@ header {
   padding: 48px 60px 48px 96px;
 }
 
-nav {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-nav a {
-  display: block;
+a {
+  display: inline-block;
   color: white;
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 1.25em;
+  opacity: 0.5;
   transition: opacity 250ms ease-in-out 0s;
-  margin-right: 36px;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
   margin-bottom: 20px;
+}
+
+nav a {
+  font-size: 1.25em;
+  margin-right: 36px;
 }
 
 nav:hover a {
@@ -56,15 +74,6 @@ nav:hover a {
 
 nav a:hover {
   opacity: 1;
-}
-
-body {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-
-  height: 100vh;
-  overflow: hidden;
 }
 
 body > header h1 {
@@ -78,9 +87,79 @@ body > header h1 {
 }
 
 main {
-  display: flex; /* use default values to flex the child to fit the same dimensions */
+  display: flex; /* Flexing something with one child... why have I done it in *this* case?? */
   margin: 0;
-  min-height: calc(100vh - 96px * 2 - 140px * 2);
+  min-height: calc(
+    100vh - 96px * 2 - 140px * 2
+  ); /* viewport_height - (margin * 2) - (header_footer_height * 2) */
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 48px 60px 48px 96px;
+}
+
+section.news header {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+section.news header label {
+  color: white;
+  background: #151515;
+  order: 2;
+}
+
+section.news header time {
+  color: #151515;
+  background: white;
+  margin-right: 10px;
+  order: 1;
+}
+
+section.news header label,
+section.news header time {
+  border: 1px solid white;
+  padding: 5px 8px;
+  font-size: 0.8125em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+section.links address ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+section.links address ul li {
+  margin-left: 20px;
+}
+
+section.links address ul.external li a::before {
+  content: "\226B";
+  padding-right: 10px;
+}
+
+section.links nav {
+  justify-content: flex-end;
+}
+
+section.links nav a {
+  font-size: 1.125em;
+  margin-right: 0;
+}
+
+section.links nav a:before {
+  content: "|";
+  padding: 0 15px;
+}
+
+section.links nav a:first-child:before {
+  content: "";
+  padding: 0;
+  display: none;
 }
 
 ul.gallery {
@@ -115,7 +194,7 @@ ul.gallery li {
 
 ul.gallery:hover li {
   /* width: calc(100vw / 8); */
-  filter: grayscale(1) opacity(0.36);
+  filter: grayscale(1) opacity(0.27);
 }
 
 ul.gallery li:hover {
@@ -156,11 +235,11 @@ ul.gallery li article h1 {
   background-size: contain;
 
   padding-top: 300px;
-  width: 400px;
+  width: 380px;
   height: 0;
 
-  filter: drop-shadow(0 0 30px black) drop-shadow(0 0 20px black)
-    drop-shadow(0 0 20px black);
+  filter: drop-shadow(0 0 40px black) drop-shadow(0 0 30px black)
+    drop-shadow(0 0 20px black) drop-shadow(0 0 10px black);
 
   overflow: hidden;
   transition: opacity 750ms ease 350ms, left 1s ease 150ms;
@@ -249,7 +328,7 @@ ul.gallery li:hover article h1 {
 
 .bloodborne article > h1 {
   background-image: url("assets/bloodborne-logo.png");
-  margin-left: -16px;
+  margin-left: -12px;
 }
 
 .deracine {
