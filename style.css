@@ -57,10 +57,12 @@ a:hover {
   opacity: 1;
 }
 
-nav {
+nav,
+nav ul {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  list-style: none;
 }
 
 nav a {
@@ -151,12 +153,13 @@ section.links nav a {
   margin-right: 0;
 }
 
-section.links nav a:before {
+section.links nav li:before {
   content: "|";
+  opacity: 0.5;
   padding: 0 15px;
 }
 
-section.links nav a:first-child:before {
+section.links nav li:first-child:before {
   content: "";
   padding: 0;
   display: none;
