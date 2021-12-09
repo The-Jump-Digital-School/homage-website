@@ -41,7 +41,16 @@ body > header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 48px 60px 48px 96px;
+  padding: 36px 20px 10px 46px;
+}
+
+body > header nav {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+body header nav a {
+  margin-bottom: 15px;
 }
 
 a {
@@ -60,12 +69,12 @@ a:hover {
 nav,
 nav ul {
   display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+  padding: 0;
+  margin: 0 0 20px 0;
   list-style: none;
 }
 
-nav a {
+body > header nav a {
   font-size: 1.25em;
   margin-right: 36px;
 }
@@ -90,16 +99,21 @@ body > header h1 {
 
 main {
   display: flex; /* Flexing something with one child... why have I done it in *this* case?? */
+  flex: 1 1;
   margin: 0;
-  min-height: calc(
-    100vh - 96px * 2 - 140px * 2
-  ); /* viewport_height - (margin * 2) - (header_footer_height * 2) */
+  /* min-height: 40vh; */
+  max-height: 50vh;
 }
 
 footer {
   display: flex;
   justify-content: space-between;
-  padding: 48px 60px 48px 96px;
+  padding: 28px 35px 10px 30px;
+  /* padding: 48px 60px 48px 96px; */
+}
+
+section.news {
+  margin-right: 30px;
 }
 
 section.news header {
@@ -129,14 +143,23 @@ section.news header time {
   font-weight: bold;
 }
 
+section.links address {
+  text-align: right;
+}
+
 section.links address ul {
-  display: flex;
-  justify-content: flex-end;
   list-style: none;
+  margin: 0 0 20px 0;
+  padding: 0;
 }
 
 section.links address ul li {
   margin-left: 20px;
+}
+
+section.links address ul.social {
+  display: flex;
+  justify-content: flex-end;
 }
 
 section.links address ul.external li a::before {
@@ -145,6 +168,7 @@ section.links address ul.external li a::before {
 }
 
 section.links nav {
+  display: block;
   justify-content: flex-end;
 }
 
@@ -366,4 +390,42 @@ input[type="checkbox"]:checked + article {
   left: 0;
   transition: opacity 500ms ease 0s;
   opacity: 1;
+}
+
+/* We start a tablet-like view */
+@media screen and (min-width: 666px) {
+  body > header nav {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media screen and (min-width: 718px) {
+}
+
+@media screen and (min-width: 820px) {
+  body > header {
+    padding: 48px 60px 20px 76px;
+  }
+
+  footer {
+    padding: 48px 60px 20px 72px;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  body > header nav {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media screen and (min-width: 1308px) {
+  body > header nav {
+    display: flex;
+  }
+
+  section.links address ul {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
