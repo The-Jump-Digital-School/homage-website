@@ -106,9 +106,10 @@ main {
 }
 
 footer {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  padding: 28px 35px 10px 30px;
+  padding: 28px 35px 20px 30px;
   /* padding: 48px 60px 48px 96px; */
 }
 
@@ -145,6 +146,7 @@ section.news header time {
 
 section.links address {
   text-align: right;
+  margin-bottom: 30px;
 }
 
 section.links address ul {
@@ -162,6 +164,10 @@ section.links address ul.social {
   justify-content: flex-end;
 }
 
+section.links address ul.external li {
+  margin: 20px 0;
+}
+
 section.links address ul.external li a::before {
   content: "\226B";
   padding-right: 10px;
@@ -169,24 +175,18 @@ section.links address ul.external li a::before {
 
 section.links nav {
   display: block;
-  justify-content: flex-end;
+  text-align: right;
+}
+
+section.links nav ul {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
 }
 
 section.links nav a {
   font-size: 1.125em;
   margin-right: 0;
-}
-
-section.links nav li:before {
-  content: "|";
-  opacity: 0.5;
-  padding: 0 15px;
-}
-
-section.links nav li:first-child:before {
-  content: "";
-  padding: 0;
-  display: none;
 }
 
 ul.gallery {
@@ -398,9 +398,16 @@ input[type="checkbox"]:checked + article {
     display: grid;
     grid-template-columns: repeat(2, auto);
   }
+
+  section.links nav ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media screen and (min-width: 718px) {
+  /* section.links nav ul {
+    grid-template-columns: repeat(4, 1fr);
+  } */
 }
 
 @media screen and (min-width: 820px) {
@@ -409,7 +416,37 @@ input[type="checkbox"]:checked + article {
   }
 
   footer {
-    padding: 48px 60px 20px 72px;
+    padding: 48px 60px 30px 72px;
+  }
+
+  section.links nav {
+    padding-bottom: 30px;
+  }
+
+  section.links nav ul {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    padding-right: 60px;
+  }
+
+  section.links nav li:before {
+    content: "|";
+    opacity: 0.5;
+    padding: 0 15px 0 0;
+  }
+
+  section.links nav li:first-child:before {
+    content: "";
+    padding: 0;
+    display: none;
+  }
+
+  section.links nav li:last-child {
+    position: relative;
+    top: -0.28125em;
   }
 }
 
@@ -422,6 +459,7 @@ input[type="checkbox"]:checked + article {
 @media screen and (min-width: 1308px) {
   body > header nav {
     display: flex;
+    flex-direction: row;
   }
 
   section.links address ul {
