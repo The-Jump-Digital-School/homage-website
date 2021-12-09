@@ -250,7 +250,7 @@ ul.gallery li article {
 }
 
 ul.gallery li:hover article {
-  right: -118%;
+  right: -35vw;
 }
 
 ul.gallery li article h1 {
@@ -262,7 +262,7 @@ ul.gallery li article h1 {
   background-size: contain;
 
   padding-top: 300px;
-  width: 380px;
+  width: calc(100vw / 3);
   height: 0;
 
   filter: drop-shadow(0 0 40px black) drop-shadow(0 0 30px black)
